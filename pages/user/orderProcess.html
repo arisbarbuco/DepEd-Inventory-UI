@@ -128,9 +128,11 @@
         </nav>
 
         <ul class="nav-toolbar">
-            <li class="cart">
-                    <a href="#" data-toggle="modal" data-target="#item-cart-modal"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <li class="sub-toolbar">
+                <div class="cart-menu">
+                    <a href="#" data-toggle="modal" data-target="#item-cart-modal"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
                         <span class="badge bg-warning">3</span></a>
+                </div>
             </li>
             <li class="dropdown"><a href="#" data-toggle="dropdown"><i class="fa fa-comments-o"></i> <span
                     class="badge bg-warning">7</span></a>
@@ -318,16 +320,27 @@
         <div class="row item-body">
 
             <nav class="clearfix">
-                <div class="dropdown pull-right">
-                    <button id="exportTo" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-export"></span>  Export <span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="exportTo">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-file-excel-o text-green"></i>  Excel</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-file-pdf-o text-red"></i>  PDF</a></li>
-                    </ul>
-                    <button class="btn btn-purple btn-sm"><i class="fa fa-print"></i>  Print</button>
-                </div>
+                <ul class="pagination-circle">
+                    <li class="pagination-active">
+                        <a href="#tab1" data-toggle="tab">
+                            <strong>1</strong>
+                            <p class="pagination-text">Item Confirmation</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab2" data-toggle="tab">
+                            2
+                            <p class="pagination-text">My Information</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab3" data-toggle="tab">
+                            3
+                            <p class="pagination-text">My Cart Information</p>
+                        </a>
+                    </li>
+                </ul>
             </nav>
-
 
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -341,9 +354,7 @@
                                 <th><input type="checkbox" class="checkbox checkbox-inline"/></th>
                                 <th>Image</th>
                                 <th>Item Name</th>
-                                <th>Available Quantity</th>
                                 <th>Quantity</th>
-                                <th>Item Type</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -354,7 +365,6 @@
                                 </td>
                                 <td><img src="../../assets/images/carousel/1.jpg" alt="1-jpg" width="70" height="50"/></td>
                                 <td>Thumbnail</td>
-                                <td>20 pack</td>
                                 <td>
                                     <div class="input-group up-down-select">
                                         <span class="btn-default btn-up-down fa-border down"><i class="glyphicon glyphicon-minus up-down-icon"></i></span>
@@ -368,10 +378,9 @@
                                         <span class="btn-default btn-up-down fa-border up"><i class="glyphicon glyphicon-plus up-down-icon"></i></span>
                                     </div>
                                 </td>
-                                <td>Semi-Expendable</td>
                                 <td>
                                     <!-- <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"> <strong>Remove</strong></span></button> -->
-                                    <button type="button" class="close" aria-label="Close" data-toggle="modal" data-target="#deleteCondition">
+                                    <button type="button" class="close" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </td>
@@ -384,11 +393,10 @@
                                     <img src="../../assets/images/carousel/2.jpg" alt="1-jpg" width="70" height="50"/>
                                 </td>
                                 <td>Thumbnail</td>
-                                <td>20 pack</td>
                                 <td>
                                     <div class="input-group up-down-select">
                                         <span class="btn-default btn-up-down fa-border down"><i class="glyphicon glyphicon-minus up-down-icon"></i></span>
-                                        <select class="item-quantity" id="item-quantity-list">
+                                        <select class="item-quantity">
                                             <option selected>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -398,10 +406,9 @@
                                         <span class="btn-default btn-up-down fa-border up"><i class="glyphicon glyphicon-plus up-down-icon"></i></span>
                                     </div>
                                 </td>
-                                <td>Semi-Expendable</td>
                                 <td>
                                     <!-- <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"> <strong>Remove</strong></span></button> -->
-                                    <button type="button" class="close" aria-label="Close" data-toggle="modal" data-target="#deleteCondition">
+                                    <button type="button" class="close" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </td>
@@ -411,13 +418,9 @@
                     </form>
 
                 </div>
-                <div class=" modal-footer clearfix">
-                    <a href="#" class="pull-left"><i class="fa fa-arrow-left"></i> <strong>add more</strong></a>
-                    <button class="btn btn-danger">Delete All</button>
-                    <button class="btn btn-primary">Save</button>
-                    <button class="btn btn-success" >Finalize</button>
-
-                </div>
+                <div class=" modal-footer ">
+                <button class="btn btn-warning btn-next" >Next</button>
+            </div>
             </div>
 
         </div>
@@ -439,6 +442,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
+
+
+
 
                     <form>
                         <table class="table table-hover">
@@ -506,25 +512,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-danger">Checkout</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation to Delete -->
-    <div class="modal fade" id="deleteCondition" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>Confirmation</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Do you really want to delete this item(s)?</p>
-                </div>
-                <div class="modal-footer text-center">
-                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="buttson" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
                 </div>
             </div>
         </div>
