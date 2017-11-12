@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title></title>
 
-    <meta name="description" content="">
 
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css"/>
-    <link rel="stylesheet" href="assets/css/plugins/calendar/calendar.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/app/app.v1.css"/>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title> Create Delivery Info </title>
+
+<meta name="description" content="">
+
+<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css"/>
+<link rel="stylesheet" href="assets/css/plugins/calendar/calendar.css"/>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="assets/css/app/app.v1.css"/>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
 </head>
 <body data-ng-app>
@@ -299,9 +301,51 @@
 
     <div class="wrapper container-fluid">
 
+        <div class="page-header">
+            <h3> &nbsp; Delivery Information </h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2"> Date of Delivery: </label>
+                                <input type='date' class="col-md-2" data-date-format="MM/DD/YYYY"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2"> Name of Delivery Person: </label>
+                                <input type="text" class="col-md-6"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2"> Contact Number 1: </label>
+                                <input type="text" class="col-md-6"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2"> Contact Number 2: </label>
+                                <input type="text" class="col-md-6"/>
+                            </div>
+                            <div class="form-group">
+                                <p class="col-sm-2"> No Image </p>
+                                <button type="button" class="btn btn-circle"> Upload Image </button>
+                            </div>
+                            <div class="btn-group-sm row">
+                                <div class="col-sm-offset-2 col-sm-2">
+                                    <button type="submit" class="btn btn-success btn-block"> Create</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-success btn-block"> Clear</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
-    <!-- Wrapper Ends Here (working area) -->
+    <!-- Warper Ends Here (working area) -->
 
 
     <footer class="container-fluid footer">
